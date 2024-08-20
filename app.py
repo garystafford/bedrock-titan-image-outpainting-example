@@ -160,6 +160,13 @@ def main():
     image_height = 0
 
     st.set_page_config(page_title="Streamlit-Bedrock-Titan Application Example")
+    hide_decoration_bar_style = """
+    <style>
+        header {visibility: hidden;}
+    </style>"""
+
+    st.markdown(hide_decoration_bar_style, unsafe_allow_html=True)
+
     st.markdown("### Image Background Replacement on Amazon Bedrock")
     st.markdown(
         "Example of using outpainting to replace the background of an image using Amazon Titan Image Generator v2 on Amazon Bedrock. Uses promptable visual segmentation as opposed to a pre-existing image mask."
