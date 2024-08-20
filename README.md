@@ -54,3 +54,4 @@ Preview of the application.
 
 ![preview1](./streamlit_preview/streamlit_01_50prcnt_v2.png)
 
+_Image licensed from [Shutterstock.com](https://www.shutterstock.com/image-photo/mykolaiv-ukraine-may-2020-mcdonalds-food-1747083503)_
