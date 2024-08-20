@@ -50,7 +50,7 @@ streamlit run app.py \
 
 Preview of the application.
 
-![preview2](./streamlit_preview/streamlit_02_50prcnt.png)
+![preview2](./streamlit_preview/streamlit_02_50prcnt_v2.png)
 
-![preview1](./streamlit_preview/streamlit_01_50prcnt.png)
+![preview1](./streamlit_preview/streamlit_01_50prcnt_v2.png)
 
