@@ -1,4 +1,4 @@
-# Titan Image Generator v2 Outpainting Example Application
+# Titan Image Generator v2 Outpainting Example
 
 Simple [Streamlit](https://streamlit.io/) application that uses the Amazon Bedrock API to call the Amazon Titan Image Generator v2 model and replaces an image's background using outpainting.
 
