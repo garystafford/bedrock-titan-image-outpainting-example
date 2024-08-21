@@ -53,7 +53,7 @@ The [burger image](pexels-valeriya-1639562_4x5_1408.jpg) used in the demonstrati
 
 ## Application Preview
 
-Video preview of application on [YouTube](https://youtu.be/AfKQVdRlO8Q?si=CSmHN46T48mCLAHl).
+Video preview of application on [YouTube](https://youtu.be/dR1VVFKOF_g?si=qVyFX7lD4q3hxXlA).
 
 Screengrabs of the application.
 
