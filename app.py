@@ -176,7 +176,7 @@ def main():
     with st.form("my_form"):
         st.markdown("Inference Parameters")
 
-        img = st.file_uploader("Upload Source Image", type=["jpg", "jpeg", "png"])
+        img = st.file_uploader(label="Upload Source Image", type=["jpg", "jpeg", "png"])
 
         if img is not None:
             image = Image.open(img)
