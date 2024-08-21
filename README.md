@@ -1,10 +1,10 @@
 # Titan Image Generator v2 Outpainting Example Application
 
-Simple [Streamlit](https://streamlit.io/) application that uses the Amazon Bedrock API to call the Amazon Titan Image Generator v2 model and replace an image's background using outpainting.
+Simple [Streamlit](https://streamlit.io/) application that uses the Amazon Bedrock API to call the Amazon Titan Image Generator v2 model and replaces an image's background using outpainting.
 
 ## Foundation Model Access
 
-Ensure you have access to the Amazon Titan Image Generator v2 model in the Model access tab of the [Amazon Bedrock](https://us-east-1.console.aws.amazon.com/bedrock/home) Web Console.
+Ensure you have access to the Amazon Titan Image Generator G1 v2 model in the "Model access" tab of the [Amazon Bedrock](https://us-east-1.console.aws.amazon.com/bedrock/home) Web Console.
 
 ## Prepare Local Environment
 
@@ -26,7 +26,7 @@ export AWS_SESSION_TOKEN="<YOUR_AWS_SESSION_TOKEN>"
 
 ## Run Streamlit Application
 
-Start the Streamlit application. The application should start locally on `http://localhost:8501` and open in your browser automatically. View the terminal output for more information.
+Start the Streamlit application. The application should start locally on `http://localhost:8501` and open in your web browser automatically. View the terminal output for more logging information.
 
 ```sh
 streamlit run app.py --server.runOnSave true
@@ -48,16 +48,12 @@ streamlit run app.py \
 
 ## Sample Image
 
-pexels-valeriya-1639562_4x5_1408.jpg
+The [burger image](pexels-valeriya-1639562_4x5_1408.jpg) used in the demonstration is from [Pexels.com](https://www.pexels.com/photo/close-up-photo-of-burger-1639562). Photo by Valeria Boltneva.
 
 ## Application Preview
 
 Preview of the application.
 
-![preview2](./streamlit_preview/streamlit_02_50prcnt_v2.png)
+![preview2](./streamlit_preview/streamlit_02_50prcnt_v3.png)
 
-![preview1](./streamlit_preview/streamlit_01_50prcnt_v2.png)
-
-_McDonald's image licensed from [Shutterstock.com](https://www.shutterstock.com/image-photo/mykolaiv-ukraine-may-2020-mcdonalds-food-1747083503)_
-
-_Burger image from [Pexels.com](https://www.pexels.com/photo/close-up-photo-of-burger-1639562)_
+![preview1](./streamlit_preview/streamlit_01_50prcnt_v3.png)
