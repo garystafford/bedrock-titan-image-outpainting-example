@@ -160,6 +160,7 @@ def main():
     image_height = 0
 
     st.set_page_config(page_title="Streamlit-Bedrock-Titan Application Example")
+
     hide_decoration_bar_style = """
     <style>
         header {visibility: hidden;}
@@ -196,32 +197,40 @@ def main():
 
         mask_prompt = st.text_input(
             label="Mask",
-            value="All McDonald's food objects, bag, hamburger box, french fries, soft drink cup",
+            value="Cheeseburger",
         )
 
         positive_prompt = st.text_area(
             height=150,
             label="Positive",
-            value="A red checkered empty blanket spreads across lush grass. In the background, a park's trees provide shade, and distant laughter echoes the joy of outdoor dining. A sun-dappled, happy scene.",
+            value="A red checkered empty blanket spreads on the lush green grass of a park. A white round plate on the center of the blanket. In the background, a park's mature trees provide shade. Sun-dappled blue skies, a happy scene.",
         )
 
         negative_prompt = st.text_area(
             height=150,
             label="Negative",
-            value="bag with handles, handles, straps, worst quality, low quality, low res, oversaturated, undersaturated, overexposed, underexposed, grayscale, b&w, bad photo, bad photography, bad art, watermark, signature, blur, blurry, grainy, ugly, asymmetrical, poorly lit, bad shadow, draft, cropped, out of frame, cut off, censored, jpeg artifacts, out of focus, glitch, duplicate, airbrushed, cartoon, anime, semi-realistic, cgi, render, blender, digital art, manga, amateur, 3D",
+            value="people, humans, animals, worst quality, low quality, low res, oversaturated, undersaturated, overexposed, underexposed, grayscale, b&w, bad photo, bad photography, bad art, watermark, signature, blur, blurry, grainy, ugly, asymmetrical, poorly lit, bad shadow, draft, cropped, out of frame, cut off, censored, jpeg artifacts, out of focus, glitch, duplicate, airbrushed, cartoon, anime, semi-realistic, cgi, render, blender, digital art, manga, amateur, 3D",
         )
 
-        cfg_scale = st.slider(
-            "CFG Scale", min_value=1.1, max_value=10.0, value=8.0, step=0.1
-        )
-        seed = st.slider(
-            "Seed", min_value=0, max_value=2147483647, value=int(2147483647 / 2), step=1
-        )
+        col1, col2 = st.columns(2)
+        with col1:
+            cfg_scale = st.slider(
+                "CFG Scale", min_value=1.1, max_value=10.0, value=7.0, step=0.1
+            )
+        with col2:
+            seed = st.slider(
+                "Seed",
+                min_value=0,
+                max_value=2147483647,
+                value=1761198479,
+                step=1,
+            )
 
         outpainting_mode = st.radio(
             label="Outpainting Mode",
             options=["DEFAULT", "PRECISE"],
             index=1,
+            horizontal=True,
         )
 
         st.divider()
