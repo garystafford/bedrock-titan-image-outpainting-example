@@ -46,6 +46,10 @@ streamlit run app.py \
     --client.toolbarMode "minimal"
 ```
 
+## Sample Image
+
+pexels-valeriya-1639562_4x5_1408.jpg
+
 ## Application Preview
 
 Preview of the application.
