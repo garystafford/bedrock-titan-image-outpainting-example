@@ -58,7 +58,7 @@ def generate_image(body):
     if finish_reason is not None:
         raise ImageError(f"Image generation error: {finish_reason}")
 
-    logger.info("Successfully generated image with model: {MODEL_ID}")
+    logger.info(f"Successfully generated image with model: {MODEL_ID}")
 
     return image_bytes
 
@@ -96,6 +96,9 @@ def prepare_request(
         with open(source_image_path, "rb") as image_file:
             input_image = base64.b64encode(image_file.read()).decode("utf8")
 
+        if not negative_prompt:
+            negative_prompt = "worst quality, low quality, low res, bad photo, bad photography, bad art, blur, blurry, grainy, ugly, asymmetrical, poorly lit, bad shadow, draft, cropped, out of frame, cut off, censored, jpeg artifacts, out of focus, glitch"
+        
         body = json.dumps(
             {
                 "taskType": "OUTPAINTING",
@@ -180,7 +183,7 @@ def main():
                 st.image(uploaded_image, caption="Source Image", use_column_width=True)
             with col2:
                 st.text(
-                    f"Type: {uploaded_image.type}\nSize (KB): {round(uploaded_image.size/1024, 2)}\nMode: {pil_image.mode}\nWidth: {pil_image.width}\nHeight: {pil_image.height}"
+                    f"Type: {uploaded_image.type}\nFormat: {pil_image.format_description}\nMode: {pil_image.mode}\nSize (KB): {round(uploaded_image.size/1024, 2)}\nWidth: {pil_image.width}\nHeight: {pil_image.height}\nResolution (pixels/inch): {pil_image.info.get("dpi")}"
                 )
             image_bytes = uploaded_image.getvalue()
             source_image_path = f"./tmp/{uploaded_image.name}"
@@ -188,19 +191,19 @@ def main():
                 f.write(image_bytes)
 
         mask_prompt = st.text_input(
-            label="Mask",
+            label="Mask Prompt",
             value="Cheeseburger",
         )
 
         positive_prompt = st.text_area(
             height=150,
-            label="Positive",
+            label="Positive Prompt",
             value="Picturesque picnic scene in a sunlit park. Close-up view of a vibrant red and white checkered blanket spread out on lush, verdant grass. A single white plate sits at the center of the blanket. Towering, leafy trees frame the background, casting dappled shadows. Patches of azure sky peek through the canopy. Warm, cheerful atmosphere with soft lighting. Photorealistic style, high detail, 4K resolution.",
         )
 
         negative_prompt = st.text_area(
             height=150,
-            label="Negative",
+            label="Negative Prompt (Optional)",
             value="people, humans, animals, worst quality, low quality, low res, oversaturated, undersaturated, overexposed, underexposed, grayscale, b&w, bad photo, bad photography, bad art, watermark, signature, blur, blurry, grainy, ugly, asymmetrical, poorly lit, bad shadow, draft, cropped, out of frame, cut off, censored, jpeg artifacts, out of focus, glitch, duplicate, airbrushed, cartoon, anime, semi-realistic, cgi, render, blender, digital art, manga, amateur, 3D",
         )
 
@@ -214,7 +217,7 @@ def main():
                 "Seed",
                 min_value=0,
                 max_value=2147483647,
-                value=1761198479,
+                value=1807028922,
                 step=1,
             )
 
