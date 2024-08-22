@@ -1,6 +1,6 @@
 # Image Background Replacement on Amazon Bedrock using outpainting
 # Author: Gary A. Stafford
-# Date: 2024-08-20
+# Date: 2024-08-21
 
 import base64
 import datetime
@@ -58,7 +58,7 @@ def generate_image(body):
     if finish_reason is not None:
         raise ImageError(f"Image generation error: {finish_reason}")
 
-    logger.info(f"Successfully generated image with model: {MODEL_ID}")
+    logger.info("Successfully generated image with model: %s", MODEL_ID)
 
     return image_bytes
 
@@ -124,7 +124,7 @@ def prepare_request(
         epoch_time = int(time.time())
         generated_image_path = f"output/outpainting_{seed}_{epoch_time}.jpg"
         image.save(generated_image_path)
-        logger.info(f"Generated image saved to: {generated_image_path}")
+        logger.info("Generated image saved to: %s", generated_image_path)
         return generated_image_path
     except ClientError as err:
         message = err.response["Error"]["Message"]
