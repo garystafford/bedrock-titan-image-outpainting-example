@@ -2,7 +2,6 @@
 
 Simple [Streamlit](https://streamlit.io/) application that uses the Amazon Bedrock API to call the Amazon Titan Image Generator v2 model and replaces an image's background using outpainting.
 
-
 ## Foundation Model Access
 
 Ensure you have access to the Amazon Titan Image Generator G1 v2 model in the "Model access" tab of the [Amazon Bedrock](https://us-east-1.console.aws.amazon.com/bedrock/home) Web Console.
