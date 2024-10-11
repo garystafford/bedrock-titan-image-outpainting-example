@@ -4,16 +4,15 @@
 # Command to run: sh ./env_setup.sh
 
 # Create a new Python3 virtual environment
-python3 -m venv streamlit_bedrock
+python3 -m venv .venv
 
 # Activate the virtual environment
-source streamlit_bedrock/bin/activate
+source .venv/bin/activate
 
 # Upgrade pip
-pip install pip  -Uq
+pip install pip --upgrade
 
 # Install required packages
-# pip install boto3 botocore streamlit -Uq
-pip install -r requirements.txt -Uq
+pip install -r requirements.txt --upgrade
 
-echo "Virtual environment 'streamlit_bedrock' has been created and activated."
+echo "Virtual Python environment '.venv' has been created and activated."
