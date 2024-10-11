@@ -10,18 +10,40 @@ Ensure you have access to the Amazon Titan Image Generator G1 v2 model in the "M
 
 Create Python virtual environment locally and install required packages (1x only). Script assume you already have a recent version of [Python 3](https://www.python.org/downloads/) installed and use a `python3` alias.
 
+### Mac
+
 ```sh
 sh ./env_setup.sh
+```
+
+### Windows
+
+```bat
+python -m venv .venv
+.venv\Scripts\activate
+
+python -m pip install pip --upgrade
+python -m pip install -r requirements.txt --upgrade
 ```
 
 ## Authenticate to AWS
 
 Provided your AWS credential on the commandline or authenticate in your normal way before starting the application.
 
+### Mac
+
 ```sh
 export AWS_ACCESS_KEY_ID="<YOUR_AWS_ACCESS_KEY_ID>"
 export AWS_SECRET_ACCESS_KEY="<YOUR_AWS_SECRET_ACCESS_KEY>"
 export AWS_SESSION_TOKEN="<YOUR_AWS_SESSION_TOKEN>"
+```
+
+### Windows
+
+```bat
+SET AWS_ACCESS_KEY_ID=YOUR_AWS_ACCESS_KEY_ID
+SET AWS_SECRET_ACCESS_KEY=YOUR_AWS_SECRET_ACCESS_KEY
+SET AWS_SESSION_TOKEN=YOUR_AWS_SESSION_TOKEN
 ```
 
 ## Run Streamlit Application
@@ -34,6 +56,8 @@ streamlit run app.py --server.runOnSave true
 
 You can [pass custom arguments](https://docs.streamlit.io/develop/api-reference/cli/run) to Streamlit when starting the application. For example:
 
+### Mac
+
 ```sh
 streamlit run app.py \
     --server.runOnSave true \
@@ -43,6 +67,20 @@ streamlit run app.py \
     --theme.secondaryBackgroundColor "#454560" \
     --theme.font "sans serif"\
     --ui.hideTopBar "true" \
+    --client.toolbarMode "minimal"
+```
+
+### Windows
+
+```bat
+streamlit run app.py ^
+    --server.runOnSave true ^
+    --theme.base "dark" ^
+    --theme.backgroundColor "#26273B" ^
+    --theme.primaryColor "#ACADC1" ^
+    --theme.secondaryBackgroundColor "#454560" ^
+    --theme.font "sans serif"^
+    --ui.hideTopBar "true" ^
     --client.toolbarMode "minimal"
 ```
 
