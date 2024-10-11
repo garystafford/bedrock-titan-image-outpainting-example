@@ -13,12 +13,22 @@ Create Python virtual environment locally and install required packages (1x only
 ### Mac
 
 ```sh
-sh ./env_setup.sh
+# I am running Python 3.12 or later
+python3 --version
+
+python3 -m venv .venv
+source .venv/bin/activate
+
+pip install pip --upgrade
+pip install -r requirements.txt --upgrade
 ```
 
 ### Windows
 
 ```bat
+REM I am running Python 3.12 or later
+python --version 
+
 python -m venv .venv
 .venv\Scripts\activate
 
