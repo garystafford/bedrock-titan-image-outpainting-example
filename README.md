@@ -8,7 +8,7 @@ Ensure you have access to the Amazon Titan Image Generator G1 v2 model in the "M
 
 ## Prepare Local Environment
 
-Create Python virtual environment locally and install required packages (1x only). Script assume you already have a recent version of [Python 3](https://www.python.org/downloads/) installed and use a `python3` alias.
+Create Python virtual environment locally and install required packages (1x only). Script assumes you already have a recent version of [Python 3](https://www.python.org/downloads/) installed and use a `python3` alias.
 
 ### Mac
 
@@ -38,7 +38,7 @@ python -m pip install -r requirements.txt --upgrade
 
 ## Authenticate to AWS
 
-Provided your AWS credential on the commandline or authenticate in your normal way before starting the application.
+Provide your AWS credential on the commandline or authenticate in your normal way before starting the application.
 
 ### Mac
 
